@@ -2,6 +2,8 @@ FROM vulhub/solr:7.0.1
 
 ADD flagA /etc/
 EXPOSE 8983
+RUN id
+USER root
 RUN apt-get update && apt-get -y \
     install \
     procps \
@@ -20,3 +22,4 @@ RUN apt-get update && apt-get -y \
     iputils-ping \
     locales-all \
     tcpdump
+USER solr
